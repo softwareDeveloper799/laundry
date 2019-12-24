@@ -1,0 +1,59 @@
+page-signin {
+  .bgImg {
+    background: url("../../assets/imgs/login.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .logo {
+    width: 200px;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 10%;
+    display: block;
+  }
+
+  .button {
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .form {
+    margin-bottom: 40px;
+  }
+
+  p {
+    line-height: 30px;
+    padding-top: 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .item-md {
+    color: white !important;
+    background-color: none !important;
+  }
+
+  .cstBtn {
+    background: white;
+    color: black;
+  }
+
+  .item-md {
+    background-color: transparent !important;
+  }
+
+  .label {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #f8f2f2 !important;
+  }
+  h5 {
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    z-index: 9;
+    color: #f3f4f4 !important;
+  }
+}

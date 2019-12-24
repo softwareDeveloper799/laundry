@@ -1,0 +1,21 @@
+<ion-content padding no-bounce class="bgImg">
+    <img src="assets/imgs/logo3.png" class="logo">
+    <!-- <h3 text-center>Sign in now</h3> -->
+    <ion-list no-lines class="form">
+        <ion-item>
+            <ion-icon name="md-mail" item-start></ion-icon>
+            <ion-label floating>Email or Phone Number</ion-label>
+            <ion-input [(ngModel)]="email" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="md-lock" item-start></ion-icon>
+            <ion-label floating>Password</ion-label>
+            <ion-input [(ngModel)]="password"  type="password"></ion-input>
+            <h5 item-end (click)="fnPassword()">Forgot ?</h5> 
+        </ion-item>
+    </ion-list>
+    <button class="cstBtn" ion-button block (click)="tab()">Sign in</button>
+    <p text-center>Oh! Not Registered yet?</p>
+    <button class="cstBtn" ion-button outline block (click)="signup()">Register Now</button>
+</ion-content>
+ 

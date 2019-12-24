@@ -1,0 +1,53 @@
+page-profile {
+    .title-center{
+        text-align: center !important;
+        margin-right: 44px;
+    }
+    .profile-img {
+        width: 90px;
+        margin: auto;
+        display: block;
+        position: relative;
+        // margin-bottom: 40px;
+        margin-top: 10px;
+        img {
+            border-radius: 50%;
+            display: block;
+            overflow: hidden;
+        }
+        ion-icon {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            line-height: 25px; 
+            text-align: center;
+            font-size: 1.4rem;
+            border-radius: 50%;
+            background: $bg-theme;
+            color: $white;
+            top: 6px;
+            right: 2px;
+        }
+    }
+    .item {
+        margin-bottom: 10px;
+    }
+    .text-input {
+        font-size: 1.5rem;
+    }
+    .button {
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    .form {
+        margin-bottom: 30px;
+    }
+    p {
+        color: $text-theme; 
+        padding-top: 20px;
+    }
+    .profile-email{
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+}

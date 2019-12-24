@@ -1,0 +1,249 @@
+page-myorders {
+  .header {
+    ion-title {
+      span {
+        font-size: 1.2rem;
+        position: relative;
+        bottom: 5px;
+        color: $text-light;
+        font-weight: 400;
+      }
+    }
+    .list {
+      margin-bottom: 0;
+      padding: 0 10px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      background: $white;
+      .item {
+        align-items: center;
+        h2 {
+          font-size: 1.5rem;
+          color: $text-light;
+          strong {
+            display: block;
+            color: $text-dark;
+            padding-top: 5px;
+          }
+        }
+        ion-avatar {
+          width: 40px;
+          height: 40px;
+          ion-icon {
+            color: $text-theme;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 36px;
+            border-radius: 50%;
+            border: 1px solid $text-theme;
+          }
+        }
+        &.status {
+          h2 {
+            strong {
+              color: $text-theme;
+            }
+          }
+        }
+      }
+    }
+    ion-segment {
+      background-color: $bg-light !important;
+      width: 100%;
+      padding-top: 10px;
+      padding-bottom: 0;
+      .segment-button {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border: none !important;
+        color: $text-dark !important;
+        background-color: $bg-light !important;
+        opacity: 1;
+        font-weight: 600;
+        position: relative;
+        font-size: 1.5rem;
+        text-transform: none;
+        width: 100%;
+        &.segment-activated {
+          color: $text-dark !important;
+          background-color: $white !important;
+        }
+      }
+    }
+  }
+  .order-list {
+    .info {
+      padding: 16px 22px;
+      padding-bottom: 5px;
+      background: $white;
+      margin-bottom: 10px;
+      padding-top: 175px;
+      p {
+        margin: 0;
+        padding-bottom: 13px;
+        small {
+          font-weight: 400;
+          font-size: 1.3rem;
+          color: $text-light;
+          padding-bottom: 10px;
+        }
+      }
+      h2 {
+        margin: 0;
+        font-size: 1.4rem;
+        padding-bottom: 3px;
+        span {
+          display: block;
+          font-size: 1.2rem;
+          padding-top: 8px;
+        }
+      }
+      &.address {
+        padding: 0;
+        padding-top: 16px;
+        .row {
+          padding: 0px 22px;
+          .col {
+            padding: 0;
+          }
+        }
+        // ion-icon {
+        //     color: $text-theme;
+        //     width: 40px;
+        //     height: 40px;
+        //     text-align: center;
+        //     line-height: 36px;
+        //     border-radius: 50%;
+        //     //                    border: 1px solid $text-theme;
+        //     font-size: 4.6rem;
+
+        // }
+
+        ion-icon {
+          color: $text-theme;
+          width: 40px;
+          height: 40px;
+          text-align: center;
+          line-height: 36px;
+          border-radius: 50%;
+          border: 1px solid $text-theme;
+        }
+        .map {
+          img {
+            position: relative;
+            top: 4px;
+            width: 100%;
+          }
+        }
+      }
+      &.payment {
+        padding-top: 8px;
+        padding-bottom: 15px;
+        margin-bottom: 0;
+        .row {
+          align-items: flex-end;
+          .col {
+            h2 {
+              font-size: 1.3rem;
+              padding-bottom: 0 !important;
+              font-weight: 700;
+              span {
+                padding-top: 10px;
+              }
+            }
+            .button {
+              font-size: 1.2rem;
+            }
+          }
+        }
+        .button.btn {
+          height: 50px;
+        }
+      }
+    }
+    .cloth_list {
+      .receipt {
+        padding: 16px 22px;
+        padding-bottom: 25px;
+        padding-top: 30px;
+        background: #ffffff;
+        position: relative;
+        margin-top: 155px;
+        .row {
+          .col {
+            padding: 0 5px;
+            h2 {
+              margin: 0;
+              font-size: 1.45rem;
+              padding-bottom: 3px;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              span {
+                font-size: 1.2rem;
+                padding: 0 16px;
+                font-weight: 700;
+              }
+              strong {
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+              }
+            }
+            p {
+              margin: 0;
+              padding-bottom: 18px;
+              display: flex;
+              small {
+                font-weight: 400;
+                font-size: 1.3rem;
+                color: $text-light;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+              }
+              strong {
+                display: block;
+                text-align: right;
+                margin-left: auto;
+              }
+            }
+          }
+        }
+        .total {
+          h2 {
+            color: $text-light;
+            font-weight: 400;
+            font-size: 1.5rem;
+          }
+          .grend_total {
+            h2 {
+              color: $text-theme;
+              font-size: 1.7rem;
+            }
+            p {
+              color: $text-theme;
+              font-size: 1.7rem;
+            }
+          }
+        }
+      }
+      .fixed-bottom {
+        padding: 0 17px;
+        position: absolute;
+        bottom: 7px;
+        width: 100%;
+        left: 0;
+        .button {
+          height: 50px;
+        }
+      }
+    }
+  }
+  .units-cart {
+    padding: 15px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}

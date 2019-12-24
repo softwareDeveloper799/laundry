@@ -1,0 +1,67 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title text-center>All Order</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-light" no-bounce overflow-scroll="true">
+    <div class="order-list">
+        <ion-label text-center *ngIf="totalCount=='0'">Data not found</ion-label>
+        <ion-list no-lines>
+
+            <div *ngFor="let item of allData;" class="padding-top">
+                <div class="order-header">
+                    <ion-row>
+                        <ion-col col-4>
+                            <small>Order No: {{item.order_id}}</small>
+                        </ion-col>
+                        <ion-col col-6 text-right text-right *ngIf="item.booking_status == 'A'">
+                            <small>{{item.appointment_date}}</small>
+                        </ion-col>
+                        <ion-col col-8 text-right text-right *ngIf="item.booking_status != 'A'">
+                            <small>{{item.appointment_date}}</small>
+                        </ion-col>
+                        <ion-col col-2 text-right *ngIf="item.booking_status == 'A'">
+                            <ion-icon (click)="doCancel(item.order_id)"
+                                style="font-size: 20px;color: #187d90;margin-right: 5px;" name="close"></ion-icon>
+                        </ion-col>
+                    </ion-row>
+                </div>
+                <ion-item (click)="fnGetDetails(item.order_id)">
+                    <ion-row style="align-items: center">
+                        <ion-col col-4
+                            *ngIf="item.booking_status == 'R' || item.booking_status == 'CS' || item.booking_status == 'CC'">
+                            <ion-avatar item-start>
+                                <img src="assets/imgs/cancel.png">
+                            </ion-avatar>
+                        </ion-col>
+                        <ion-col col-4
+                            *ngIf="item.booking_status == 'C' || item.booking_status == 'A' || item.booking_status == 'CO' || item.booking_status == 'MN'">
+                            <ion-avatar item-start>
+                                <img src="assets/imgs/confirmed.png">
+                            </ion-avatar>
+                        </ion-col>
+                        <ion-col col-8>
+                            <h2>{{item.title}}</h2>
+                            <h3 *ngIf="item.booking_status == 'C'" class="color-green">Confirmed</h3>
+                            <h3 *ngIf="item.booking_status == 'R'" class="color-danger">Rejected</h3>
+                            <h3 *ngIf="item.booking_status == 'A'" class="color-warning">Pending</h3>
+                            <h3 *ngIf="item.booking_status == 'CS'" class="color-danger">Cancelled</h3>
+                            <h3 *ngIf="item.booking_status == 'CC'" class="color-danger">Cancelled</h3>
+                            <h3 *ngIf="item.booking_status == 'CO'" class="color-primary">Completed</h3>
+                            <h3 *ngIf="item.booking_status == 'MN'" class="color-green">No Show</h3>
+                            <ion-row>
+                                <ion-col col-5>
+                                    <h3 text-left>{{item.appointment_time}}</h3>
+                                </ion-col>
+                                <ion-col col-7>
+                                    <h2 text-right>{{currSymbol}}{{item.total_payment}}</h2>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                </ion-item>
+            </div>
+        </ion-list>
+    </div>
+</ion-content>

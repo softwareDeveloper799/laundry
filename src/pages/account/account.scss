@@ -1,0 +1,74 @@
+page-account {
+    .order-head {
+        padding: 20px 16px 25px;
+        background-color: $white;
+        border-bottom: 5px solid $bg-light;
+        .row {
+            display: flex;
+            align-items: center;
+        }
+        .col {
+            img {
+                width: 80%;
+                margin: auto;
+                max-width: 100px;
+                border-radius: 50%;
+            }
+            p {
+                font-weight: 900;
+                color: $text-dark;
+                font-size: 2rem;
+                padding-left: 5px;
+                span {
+                    display: block;
+                    color: $text-theme;
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                    margin-top: 3px;
+                }
+            }
+        }
+    }
+    // .about {
+    //     font-size: 1rem;
+    //     font-weight: 500;
+    //     color: $text-muted;
+    // }
+    .list {
+        margin-bottom: 20px !important;
+        // created by arshad
+        position: fixed;
+        // bottom: 0;
+        width: -webkit-fill-available;
+        // end
+        .item:first-child {
+            padding-top: 16px;
+        }
+        .item:last-child {
+            padding-bottom: 16px;
+        }
+    }
+    .item {
+        padding-top: 3px;
+        padding-bottom: 3px;
+
+        ion-icon {
+            font-size: 1.8rem;
+            color: $text-theme;
+            line-height: 28px;
+        }
+        .item-inner {
+            margin-left: 5px !important;
+            .label {
+                font-size: 1.4rem;
+                font-weight: 600;
+                color: $text-dark;
+            }
+        }
+    }
+    .title-center{
+        text-align: center !important;
+        margin-right: 44px;
+    }
+
+}

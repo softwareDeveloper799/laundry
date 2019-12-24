@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title class="title-center">
+            About Us
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+    <div padding>
+        <div class="logo">
+            <img src="assets/imgs/logo4.png">
+        </div>
+        <p>
+            LaundryBooking app is an on-demand laundry and dry cleaning app that delivers clean clothes at the tap of a
+            button. Services like washing clothes, ironing clothes, or dry clean of clothes can be book with this app.
+        </p>
+        <p>
+            Skymoon Lab has provided professional website development solutions to small business for many years. With years of web related experience, Skymoon Lab is quickly becoming leading website Development Company. We have special team for Website Design who has been involved in designing professional websites of all categories. We look forward to establishing a long term relationship with our clients. Our motto is to provide our customers with an affordable web marketing tool that returns Results. Through a simple process we will work with you through the development stage, ensuring to you get exactly what you want out of your website, while making sure we always provide you with the right advice so that you end up with a product that you, and the customer using it, will be glad with.
+        </p>
+    </div>
+    <div class="services" padding>
+        <p class="txt-light-muted">Our Services</p>
+        <ion-row>
+            <ion-col *ngFor="let service of allServices" col-4>
+                <img *ngIf="service.image" [src]="service.image" width="90" height="80">
+                <img *ngIf="!service.image" width="90" height="80" src="assets/imgs/default_service.png">
+                <h6 class="md-text" [innerHTML]="service.title"></h6>
+            </ion-col>
+        </ion-row>
+    </div>
+</ion-content>

@@ -1,0 +1,289 @@
+page-selectclothes {
+    .title-center{
+        text-align: center !important;
+        margin-right: 44px;
+    }
+    .select-tab {
+        padding: 0;
+        &.toolbar-ios {
+            min-height: 35px;
+        }
+        &.toolbar-wp {
+            min-height: 54px;
+        }
+        .toolbar-content {
+            margin-bottom: -14px;
+        }
+        .segment-ios {
+            height: 35px;
+            ion-segment-button {
+                height: 35px;
+            }
+        }
+        .segment-wp {
+            ion-segment-button {
+                min-width: 25%;
+            }
+        }
+        .segment-button {
+            background-color: transparent !important;
+            border: none !important;
+            color: $text-dark !important;
+            font-weight: 500;
+            position: relative;
+            border-bottom: 3px solid #fff !important;
+            &.segment-activated {
+                color: $text-theme !important;
+                border-bottom-color: $bg-theme !important;
+            }
+            ion-badge {
+                font-size: .85rem;
+                position: absolute;
+                width: 16px;
+                padding: 0px;
+                height: 16px;
+                border-radius: 50%;
+                line-height: 16px;
+                text-align: center;
+                top: 0;
+                right: 0;
+                font-weight: 500;
+                &.d-none {
+                    display: none;
+                }
+            }
+        }
+    }
+    .cloth-list {
+        margin-bottom: 60px;
+        .list {
+            .item {
+                padding-left: 8px;
+                padding-top: 4px;
+                padding-bottom: 4px;
+                margin-bottom: 2px;
+                ion-avatar {
+                    width: 60px;
+                    height: 60px;
+                    position: relative;
+                    display: block;
+                    img {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: -50%;
+                        right: -50%;
+                        margin: auto;
+                        min-height: 100%;
+                        min-width: 100%;
+                        border-radius: 0;
+                    }
+                }
+                .label {
+                    max-width: 100%;
+                    width: 100%;
+                    h2 {
+                        font-weight: 600;
+                        color: $text-dark;
+                        font-size: 1.9rem;
+                    }
+                    .select {
+                        padding: 0;
+                        min-width: 78px;
+                        max-width: 78px;
+                        border: none;
+                        margin: 0;
+                        &.select-ios {
+                            .select-icon {
+                                right: 7px;
+                            }
+                        }
+                        &.select-wp {
+                            .select-icon {
+                                height: 22px;
+                                .select-icon-inner {
+                                    border-color: $text-theme;
+                                }
+                            }
+                        }
+                        .select-icon {
+                            height: 14px;
+                            .select-icon-inner {
+                                color: $text-theme;
+                            }
+                        }
+                        .select-text {
+                            font-size: 1.15rem;
+                            font-weight: 600;
+                            color: $text-theme;
+                            max-width: 65px;
+                            text-overflow: unset;
+                        }
+                        .item-cover {
+                            width: auto;
+                            height: auto;
+                        }
+                    }
+                }
+                ion-note {
+                    color: $text-dark;
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    color: #2e2e2e;
+                    margin-top: 0px;
+                    width: 80px;
+                    margin-right: 0;
+                    text-align: center;
+                    margin-left: 0;
+                    display: flex;
+                    align-items: center;
+                    &.price {
+                        width: 50px;
+                    }
+                    ion-icon {
+                        font-size: 2.5rem;
+                        color: $text-theme;
+                    }
+                    span {
+                        font-size: 1.2rem;
+                        text-align: center;
+                        width: 35px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+
+    }
+    .fixed-bootom {
+        position: fixed;
+        bottom: 0;
+        background-color: $bg-theme;
+        color: $white;
+        width: 100%;
+        padding: 1rem;
+        height: 50px;
+        .row {
+            display: flex;
+            align-items: center;
+            .cost {
+                font-weight: 500;
+                font-size: 1.8rem;
+                border-right: 1px solid #fff;
+                min-width: 125px;
+            }
+            .small {
+                font-size: 1rem;
+                padding-left: 10px;
+            }
+            .next {
+                font-weight: 500;
+                font-size: 1.8rem;
+                text-align: right;
+                ion-icon {
+                    margin-left: 1rem;
+                    margin-right: .5rem;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+    .label-md {
+        margin: 0 !important; 
+   }
+   .bg{
+    height: 100%;
+    background-color: #fff;
+    align-items: center;
+    display: grid;
+    align-items: center;
+   }
+   .bookin_title{
+    font-size: 20px;
+    font-weight: 500;
+    color:$text-theme;
+    text-transform: initial;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    text-align: center;
+    padding: 60px 50px;
+    width: 100%;
+  }
+  .item-md.item-block .item-inner {
+     padding-right: 0px;
+    /* border-bottom: 1px solid #dedede; */
+}
+   .booking_title_bg{
+       
+       background-color: #fff;
+        width: 100%;
+    }
+    .main_view_bg{
+        background-color: #fff;
+    }
+    .login_icon{
+        margin: 8px 0 8px 0 !important;
+        border-right: 1px solid #ccc;
+        padding-right: 10px;
+        padding-left: 10px;
+        font-size: 1.5rem !important;
+        line-height: 2 !important;
+        color: $text-theme !important;
+        position: absolute;
+      }
+      .login_text {
+        border: 0px solid #D1D1D1;
+        background-color: #f6f3f3;
+        border-radius: 5px;
+        font-weight: normal;
+        padding-left: 5rem;
+        color: #222326;
+        font-size: 1.5rem;
+        line-height: 2;
+      }
+      .btnsubmit{
+	    // border-radius: 4px;
+        font-size: 1.6rem !important;
+        color: #fff;
+        background-color: #187d90;
+        padding: 20px !important;
+        text-transform: uppercase;
+        width: 100%;
+    }
+    .booking_img{
+        max-width: 100%;
+        border: 0;
+        width: 200px;
+        height: auto;
+        padding: 20px;
+        opacity: 0.5;
+        // margin-top: 15px;
+    }
+    .zip-card{
+     padding: 10px;
+    //  ion-item{
+    //      padding: 10px;
+    //  }
+    }
+}
+
+.select-alert {
+    .alert-title {
+        font-size: 1.5rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-weight: 600;
+        color: $text-theme;
+    }
+    .alert-radio-label {
+        font-size: 1.5rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-weight: 600;
+        display: flex;
+    }
+   
+   
+}

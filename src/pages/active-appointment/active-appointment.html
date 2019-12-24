@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title text-center>Active Appointment</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="bg-light" no-bounce overflow-scroll="true">
+    <div text-center class="order-list">
+        <ion-label *ngIf="totalActiveBooking=='0'">Data not found</ion-label>
+        <ion-list no-lines>
+            <div *ngFor="let item of activBooking;" class="padding-top">
+                <div *ngIf="item.booking_status=='A'">
+                    <div class="order-header">
+                        <ion-row>
+                            <ion-col col-4 text-left>
+                                <small>Order No: {{item.order_id}}</small>
+                            </ion-col>
+                            <ion-col col-6 text-right>
+                                <small>{{item.appointment_date}}</small>
+                            </ion-col>
+                            <ion-col col-2 text-right>
+                                <ion-icon (click)="doCancel(item.order_id)"
+                                    style="font-size: 20px;color: #187d90;margin-right: 5px;" name="close">
+                                </ion-icon>
+                            </ion-col>
+                        </ion-row>
+                    </div>
+                    <ion-item (click)="fnGetDetails(item.order_id)">
+                        <ion-row style="align-items: center">
+                            <ion-col col-4>
+                                <ion-avatar item-start>
+                                    <img src="assets/imgs/confirmed.png">
+                                </ion-avatar>
+                            </ion-col>
+                            <ion-col col-8>
+                                <h2>{{item.title}}</h2>
+                                <h3 class="color-warning">Pending</h3>
+                                <ion-row>
+                                    <ion-col col-5>
+                                        <h3 text-left>{{item.appointment_time}}</h3>
+                                    </ion-col>
+                                    <ion-col col-7>
+                                        <h2 text-right>{{currSymbol}}{{item.total_payment}}</h2>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-col>
+                        </ion-row>
+                    </ion-item>
+                </div>
+            </div>
+        </ion-list>
+    </div>
+</ion-content>

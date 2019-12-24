@@ -1,0 +1,22 @@
+<!--
+  Generated template for the AllShopsListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Choose Shop</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-list>
+  <ion-item *ngFor="let item of shopList" (click)="selectShop(item)">
+     <p>{{item.fullname}}</p>
+  </ion-item>
+</ion-list>
+</ion-content>

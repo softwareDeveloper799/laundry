@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title text-center>Account</ion-title> 
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-light" no-bounce>
+    <div class="order-head" (click)="profile()">
+        <ion-row>
+            <ion-col col-4><img src="assets/imgs/user_1.png"></ion-col>
+            <ion-col col-8>
+                <p class="x-lg-text">{{name}}<br><div class="lg-md-text txt-light-muted">{{user_email}}</div><span class="md-text">View profile</span></p>
+            </ion-col> 
+        </ion-row>
+    </div>
+    <ion-list no-lines>
+        <ion-item (click)="addaddress()">
+            <ion-icon name="md-pin" item-start></ion-icon>
+            My address
+        </ion-item>
+        <ion-item (click)="about()">
+            <ion-icon name="md-clipboard" item-start></ion-icon>
+            About us
+        </ion-item>
+        <ion-item (click)="contact()">
+            <ion-icon name="md-mail" item-start></ion-icon>
+            Contact us
+        </ion-item>
+        <!-- <ion-item (click)="tnc()">
+            <ion-icon name="md-document" item-start></ion-icon>
+            Terms & Services
+        </ion-item> -->
+        <ion-item (click)="signin()">
+            <ion-icon name="md-open" item-start></ion-icon>
+            Logout
+        </ion-item>
+    </ion-list>
+</ion-content>

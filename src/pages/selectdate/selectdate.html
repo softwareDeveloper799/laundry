@@ -1,0 +1,96 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title class="title-center">Select Date & Time</ion-title>
+    </ion-navbar>
+    <ion-toolbar no-border-top class="select-tab">
+        <ion-segment [(ngModel)]="category">
+            <ion-segment-button value="pick">
+                <span class="pick"></span> Pick up
+            </ion-segment-button>
+            <ion-segment-button value="delivery">
+                <span class="delivery"></span> Delivery
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-light" no-bounce>
+    <div [ngSwitch]="category">
+        <ion-list [hidden]="category != 'pick'" no-lines>
+            <div class="select-day">
+                <p class="heading">Select Pick up Date</p>
+                <ion-scroll scrollX style="height:42px;white-space: nowrap;">
+                    <div class="scroll-item" *ngFor="let item of allDateList;let i= index">
+                        <label ion-label for="date_slot_pick_{{i}}" class="date-slot-radio">
+                            <input ion-radio type="radio" name="date-slot-pick" id="date_slot_pick_{{i}}"
+                                (click)="fnSelectedDatePickup(item.dateList)" />
+                            <div class="date-radio-label">
+                                <p class="date-slot-title">{{item.dateList}}</p>
+                            </div>
+                        </label>
+                    </div>
+                </ion-scroll>
+            </div>
+            <div class="select-time">
+                <p class="heading">Select Pick up Time</p>
+                <ion-row no-padding>
+                    <div *ngIf="timeListPickCount=='0'">
+                        <h5 text-center>Pickup time is not availabe!. please select other date.</h5>
+                    </div>
+                    <ion-col col-6 no-padding *ngFor="let item of allTimeList;let i= index">
+                        <label ion-label for="time_slot_pick_{{i}}" class="date-slot-radio">
+                            <input ion-radio type="radio" name="time-slot-pick" id="time_slot_pick_{{i}}"
+                                (click)="fnSelectedTimePickup(item)" />
+                            <div class="date-radio-label">
+                                <p class="date-slot-title">{{item}}</p>
+                            </div>
+                        </label>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-list>
+
+        <ion-list [hidden]="category != 'delivery'" no-lines>
+            <div class="select-day">
+                <p class="heading">Select Delivery Date</p>
+                <ion-scroll scrollX style="height:42px;white-space: nowrap;">
+
+                    <div class="scroll-item" *ngFor="let item of allDateListDelivery;let i= index">
+                        <label ion-label for="date_slot_{{i}}" class="date-slot-radio">
+                            <input ion-radio type="radio" name="date-slot-deliver" id="date_slot_{{i}}"
+                                (click)="fnSelectedDateDeliver(item.dateList)" />
+                            <div class="date-radio-label">
+                                <p class="date-slot-title">{{item.dateList}}</p>
+                            </div>
+                        </label>
+                    </div>
+                </ion-scroll>
+            </div>
+            <div class="select-time">
+                <p class="heading">Select Delivery Time</p>
+                <ion-row no-padding>
+
+                    <div *ngIf="timeListDeliveryCount=='0'">
+                        <h5 text-center>Delivery time is not availabe!. please select other date.</h5>
+                    </div>
+                    <ion-col col-6 no-padding *ngFor="let item of allTimeListDelivery;let i= index">
+                        <label ion-label for="time_slot_{{i}}" class="date-slot-radio">
+                            <input ion-radio type="radio" name="time-slot-deliver" id="time_slot_{{i}}"
+                                (click)="fnSelectedTimeDeliver(item)" />
+                            <div class="date-radio-label">
+                                <p class="date-slot-title">{{item}}</p>
+                            </div>
+                        </label>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-list>
+    </div>
+</ion-content>
+<ion-footer class="fixed-bootom">
+    <ion-row>
+        <ion-col (click)="payment()" class="next">Next
+            <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+        </ion-col>
+    </ion-row>
+</ion-footer>

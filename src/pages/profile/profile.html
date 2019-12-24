@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title class="title-center">My Profile</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding no-bounce>
+    <div class="profile-img"><img src="assets/imgs/user_1.png">
+    </div>
+    <div class="text-center profile-email lg-text txt-light-muted">{{user_email}}</div>
+    <ion-list no-lines class="form">
+        <ion-item *ngIf="user_type=='user'">
+            <ion-icon name="md-person" item-start></ion-icon>
+            <ion-label floating>Enter First Name</ion-label>
+            <ion-input [(ngModel)]="first_name" type="text">{{first_name}}</ion-input>
+        </ion-item>
+        <ion-item *ngIf="user_type=='user'">
+            <ion-icon name="md-person" item-start></ion-icon>
+            <ion-label floating>Enter Last Name</ion-label>
+            <ion-input [(ngModel)]="last_name" type="text"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="user_type=='staff'">
+            <ion-icon name="md-person" item-start></ion-icon>
+            <ion-label floating>Enter Full Name</ion-label>
+            <ion-input [(ngModel)]="full_name" type="text">{{full_name}}</ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="md-phone-portrait" item-start></ion-icon>
+            <ion-label floating>Phone Number</ion-label>
+            <ion-input [(ngModel)]="phone" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="md-mail" item-start></ion-icon>
+            <ion-label floating>Address</ion-label>
+            <ion-input [(ngModel)]="address" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="md-apps" item-start></ion-icon>
+            <ion-label floating>Zip Code</ion-label>
+            <ion-input [(ngModel)]="zip" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="md-pin" item-start></ion-icon>
+            <ion-label floating>City</ion-label>
+            <ion-input [(ngModel)]="city" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="md-pin" item-start></ion-icon>
+            <ion-label floating>State</ion-label>
+            <ion-input [(ngModel)]="state" type="text"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="user_type=='staff'">
+            <ion-icon name="md-pin" item-start></ion-icon>
+            <ion-label floating>Country</ion-label>
+            <ion-input [(ngModel)]="country" type="text"></ion-input>
+        </ion-item>
+    </ion-list>
+    <button ion-button full (click)="updateProfile()">Update Profile</button>
+    <p text-center (click)="changePassword()">Change Password</p>
+</ion-content>

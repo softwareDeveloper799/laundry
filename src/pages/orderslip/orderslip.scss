@@ -1,0 +1,170 @@
+page-orderslip {
+    .toolbar-background {
+        background-color: transparent !important;
+    }
+    .scroll-content {
+        margin-top: 0 !important;
+    }
+    .order-head {
+        padding: 1px 16px 25px;
+        background-color: $white;
+        margin-bottom: 3px;
+        .header {
+            font-size: 1.6rem;
+            text-align: center;
+            font-weight: 600;
+            color: $text-dark;
+            small {
+                color: $text-light;
+                display: block;
+                font-size: 1rem;
+            }
+        }
+        .row {
+            display: flex;
+            align-items: center;
+        }
+        .col {
+            img {
+                width: 100%;
+                margin: auto;
+                max-width: 100px;
+            }
+            p {
+                font-weight: 400;
+                color: $text-muted;
+                font-size: 1.4rem;
+                padding-left: 20px;
+                strong {
+                    display: block;
+                    color: $text-theme;
+                    font-size: 1.5rem;
+                    margin-top: 6px;
+                }
+            }
+        }
+    }
+    .order-address {
+        padding: 25px 16px 0px;
+        background-color: $white;
+        font-size: 1.3rem;
+        .row {
+            padding: 0;
+            .col {
+                font-weight: 500;
+                color: $text-muted;
+                margin-bottom: 20px;
+                padding: 0;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                strong {
+                    display: block;
+                    margin-top: 10px;
+                    color: $text-dark;
+                    width: 90%;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    font-size: 1.4rem;
+                }
+                span {
+                    font-size: 1.2rem;
+                    margin-top: 5px;
+                    display: block;
+                }
+            }
+        }
+
+    }
+    .mg-right{
+        margin-right: 10px;
+    }
+    .all-orders {
+        background-color: $white;
+        padding: 1px 16px 16px;
+        .order-header {
+            display: flex;
+            align-items: center;
+            color: $text-muted;
+            font-weight: 500;
+            span {
+                color: $text-theme;
+                margin-left: auto;
+                font-weight: 600;
+            }
+        }
+        .label {
+            align-items: center;
+            color: $text-dark;
+            font-size: 1.4rem;
+            display: flex;
+            margin-right: 0;
+            padding-bottom: 2px;
+            span {
+                font-weight: 600;
+                &.cross {
+                    text-align: center;
+                    width: 32px;
+                }
+                &.service {
+                    color: $text-muted;
+                    font-weight: 400;
+                    font-size: 1.2rem;
+                    width: 76px;
+                    margin-left: auto;
+                    margin-right: 16px;
+                }
+                &.amount {
+                    text-align: right;
+                    width: 30px;
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .price-section {
+            background-color: $white;
+            padding: 10px 0px 1px;
+            .label {
+                margin-right: 16px;
+                display: flex;
+                color: $text-muted;
+                font-weight: 500;
+                margin-top: 10px;
+                margin-bottom: 8px;
+                font-size: 1.5rem;
+                margin-right: 0;
+                span {
+                    margin-left: auto;
+                    color: $text-dark;
+                    font-weight: 600;
+                }
+                &.total-amount {
+                    color: $text-theme;
+                    font-weight: 600;
+                    margin-bottom: 15px;
+                    span {
+                        color: $text-theme;
+                        font-size: 1.6rem;
+
+                    }
+                }
+            }
+        }
+    }
+    .user-not{
+        text-align: center;
+        display: flex;
+        margin-top: 100px;
+        padding: 20px;
+        font-size: 18px;
+    }
+    .close-icon{
+        float: right;
+        font-size: 25px;
+        margin-right: 0.5em;
+        color: gray;
+        margin-left: -25px;
+      }
+}

@@ -1,0 +1,63 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title class="title-center">Register now</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding no-bounce class="bgImg">
+    <!-- <ion-icon name="md-camera" class="cam-icon"></ion-icon>
+    <p text-center>Add Photo</p> -->
+    <ion-col class="center-left">
+        <div class="text-center">
+            <img src="assets/imgs/user_1.png" width="80" height="80">
+        </div>
+    </ion-col>
+    <ion-list no-lines class="form">
+        <ion-item>
+            <ion-icon name="md-person" item-start></ion-icon>
+            <ion-label floating>Enter First Name</ion-label>
+            <ion-input type="text"  [(ngModel)]="register.fname" ></ion-input>
+        </ion-item>
+        <ion-item>
+                <ion-icon name="md-person" item-start></ion-icon>
+                <ion-label floating>Enter Last Name</ion-label>
+                <ion-input type="text"  [(ngModel)]="register.lname"></ion-input>
+            </ion-item>
+        <ion-item>
+            <ion-icon name="md-mail" item-start></ion-icon>
+            <ion-label floating>Email Address</ion-label>
+            <ion-input type="email"  [(ngModel)]="register.email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="md-phone-portrait" item-start></ion-icon>
+            <ion-label floating>Phone Number</ion-label>
+            <ion-input type="tel"  [(ngModel)]="register.number"></ion-input>
+        </ion-item>
+        <ion-item>
+                <ion-icon md="md-apps" item-start></ion-icon>
+                <ion-label floating>Zip Code</ion-label>
+                <ion-input type="number"  [(ngModel)]="register.zip"></ion-input>
+        </ion-item>
+        <ion-item>
+                <ion-icon md="md-pin" item-start></ion-icon>
+                <ion-label floating>Building/Society Name & Number, etc.zmm m</ion-label> 
+                <ion-input type="text"  [(ngModel)]="register.address"></ion-input>
+        </ion-item>
+        <ion-item>
+                <ion-icon md="md-pin" item-start></ion-icon>
+                <ion-label floating>City</ion-label>
+                <ion-input type="text"  [(ngModel)]="register.city"></ion-input>
+        </ion-item>
+        <ion-item>
+                <ion-icon md="md-pin" item-start></ion-icon>
+                <ion-label floating>State</ion-label>
+                <ion-input type="text"  [(ngModel)]="register.state"></ion-input>
+        </ion-item>
+        <ion-item>
+                <ion-icon name="md-lock" item-start></ion-icon>
+                <ion-label floating>Password</ion-label>
+                <ion-input type="password"  [(ngModel)]="register.password"></ion-input>
+            </ion-item>
+    </ion-list>
+    <button ion-button block (click)="otp()">Register Now</button>
+</ion-content>

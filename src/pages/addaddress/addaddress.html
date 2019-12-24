@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title class="title-center">My Address</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-light" no-bounce>
+    <p padding-left padding-right class="heading">Click on icons to add Address</p>
+    <ion-toolbar no-border-top class="select-tab">
+        <ion-segment [(ngModel)]="address">
+            <ion-segment-button value="home">
+                <span class="home-img"></span> Home
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+    <div class="address-list">
+        <ion-list no-lines class="home-address">
+            <div class="input-address" padding>
+                <p class="heading" no-margin padding-bottom>Enter Home Address Details</p>
+                <ion-list no-line>
+                    <ion-item>
+                        <ion-input type="text" [(ngModel)]="_address" placeholder="Building/Society Name & Number">
+                        </ion-input>
+                    </ion-item>
+                    <ion-row no-padding>
+                        <ion-col no-padding>
+                            <ion-item>
+                                <ion-input type="text" [(ngModel)]="zipcode" placeholder="Zip Code"></ion-input>
+                            </ion-item>
+                        </ion-col>
+                        <ion-col no-padding>
+                            <ion-item>
+                                <ion-input type="text" [(ngModel)]="city" placeholder="City"></ion-input>
+                            </ion-item>
+                        </ion-col>
+                    </ion-row>
+                    <ion-item>
+                        <ion-input type="text" [(ngModel)]="state" placeholder="State"></ion-input>
+                    </ion-item>
+                </ion-list>
+                <button ion-button full (click)="fnUpdateProfile()">Save Address</button>
+            </div>
+        </ion-list>
+    </div>
+</ion-content>

@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-navbar>
+
+        <ion-title>&nbsp;</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-light" no-bounce overflow-scroll="true"> 
+    <div *ngIf="!userRegister" class="user-not">
+        Email address does not register. please register your email address. or login again!
+    </div>
+    <div *ngIf="userRegister" class="order-head">
+        <p class="header">Order No. {{orderId}}<small>
+                <ion-datetime disabled display-format="MMMM YYYY" [(ngModel)]="date"></ion-datetime>
+            </small></p>
+        <ion-row>
+            <ion-col style="max-width: 110px;"><img src="assets/imgs/clock.png"></ion-col>
+            <ion-col>
+                <p>Order Status<strong>Order Pending</strong></p>
+            </ion-col>
+        </ion-row>
+    </div>
+    <div *ngIf="userRegister" class="order-address">
+        <ion-row>
+            <ion-col col-6>Pick up<strong>{{pickDate}}</strong><span>{{pickTime}}</span></ion-col>
+            <ion-col col-6>Delivery<strong>{{deliverDate}}</strong><span>{{deliverTime}}</span></ion-col>
+
+        </ion-row>
+    </div>
+    <div *ngIf="userRegister" class="all-orders">
+        <p class="order-header">Your cloth list</p>
+        <ion-label *ngFor="let item of orderListArray">
+            <span class="items">{{item.base_price}}</span>
+            <span class="cross">x</span>
+            <span class="items mg-right">{{item.minlimit}}</span>
+            <span class="name">{{item.units_title}}</span>
+            <span class="service">{{selectedServiceName}}</span>
+            <span class="amount">{{currSymbol}}{{item.total}}</span>
+        </ion-label>
+        <div class="price-section">
+            <ion-label>Sub Total<span>{{currSymbol}}{{sub_total}}</span></ion-label>
+            <ion-label>Tax<span>{{currSymbol}}{{tax}}</span></ion-label>
+            <ion-label *ngIf="booleanDiscount=='true'">Coupon Discount<span>{{currSymbol}}{{discount}}</span>
+            </ion-label>
+            <ion-label class="total-amount">Payble Amount<span>{{currSymbol}}{{grandTotal}}</span></ion-label>
+        </div>
+    </div>
+
+</ion-content>
+<ion-footer>
+    <button ion-button full (click)="rate()" no-margin style="height: 50px">Finish</button>
+</ion-footer>

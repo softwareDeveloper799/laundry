@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600');
+* {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+//all theme color
+$bg-light: #f5f5f5;
+$white: #ffffff;
+$black: #000000;
+$bg-theme: #187d90;
+$text-theme: #187d90;
+$text-light: #c0c0c0;
+$text-muted: #9c9c9c;
+$text-dark: #2e2e2e;
+$text-black: #000000;
+.bg-light {
+    background-color: $bg-light;
+}
+.txt-light-muted{
+    color: $text-muted !important;
+}
+.button {
+    text-transform: none;
+}
+
+.back-button {
+    color: $text-theme !important;
+}
+
+.back-button-text-ios {
+    color: transparent;
+}
+
+//default form style
+.form {
+    .item {
+        padding-left: 0;
+        border-bottom: 1px solid #eeeeee !important;
+        box-shadow: none !important;
+        .item-inner {
+            border: none !important;
+            box-shadow: none !important;
+            margin-left: 16px !important;
+            .text-input-wp {
+                border-color: transparent !important;
+                padding-left: 0 !important;
+                margin-left: 0 !important;
+            }
+            h5 {
+                margin: 0;
+                position: absolute;
+                right: 0;
+                top: 40px;
+                z-index: 9;
+                color: $text-theme;
+            }
+            .label {
+                font-size: 1.5rem;
+                font-weight: 300;
+                color: $text-light;
+            }
+        }
+        ion-icon {
+            display: inline-block;
+            font-size: 1.2em !important;
+            margin-bottom: 0 !important;
+            margin-top: 30px !important;
+            margin-right: 0px !important;
+            min-height: 0;
+            color: $text-theme;
+        }
+        &.item-wp {
+            h5 {
+                margin: 0;
+                position: absolute;
+                right: 0;
+                top: 49px;
+                z-index: 9;
+            }
+        }
+        &.item-input-has-focus {
+            .label {
+                color: $text-theme;
+            }
+        }
+    }
+}
+
+//header style
+.header {
+    &::after {
+        display: none;
+    }
+    .toolbar-background {
+        background-color: $white;
+        border-color: transparent;
+    }
+}
+
+//tab style
+.tab-button {
+    position: relative;
+    .tab-button-icon {
+        font-size: 24px;
+        color: $text-light !important;
+    }
+    &[aria-selected="true"] {
+        .tab-button-icon {
+            color: $text-theme !important;
+        }
+        &::after {
+            content: '';
+            background-color: $bg-theme;
+            height: 3px;
+            width: 60%;
+            margin: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            position: absolute;
+        }
+    }
+}
+
+/////------------created by Arshad 13-04-2019
+.x-sm-text{
+    font-size: 0.875rem !important;  //14px
+}
+.sm-text{
+    font-size: 1rem !important;   //16px
+}
+.md-text{
+    font-size: 1.125rem !important; //18px
+}
+.lg-md-text{
+    font-size: 1.25rem !important  // 20px;  
+    
+}
+.lg-text{
+    font-size: 1.5rem !important;  //24px
+}
+.x-lg-text{
+    font-size: 1.875rem !important;  //26px
+}
+.xx-lg-text{
+    font-size: 2rem !important;  //32px
+}
+.center-left{
+    display: flex;
+    align-items: center;
+}
+.align-right{
+    justify-content: flex-end;
+}
+.text-center{
+    text-align: center;
+    width: -webkit-fill-available;
+}
+.top-zero{
+    margin-top: 0px;
+}
+.color-green{
+    color: #009933 !important;
+}
+.color-danger{
+    color: #ff0000 !important;
+}
+.color-primary{
+    color: $bg-theme !important;
+}
+.color-warning{
+    color: #e69900 !important;
+}
+.alert-md .alert-title {
+    font-size: 20px;
+}

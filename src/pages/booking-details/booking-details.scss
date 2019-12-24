@@ -1,0 +1,91 @@
+page-booking-details {
+    .title-center{
+        text-align: center !important;
+        margin-right: 44px;
+    }
+    .close-icon{
+        float: right;
+        font-size: 25px;
+        margin-right: 0.5em;
+        color: gray;
+        margin-left: -25px;
+      }
+      .card_border_radius{
+		border-radius: 10px !important;
+    }
+    .p_b_25{
+		padding-bottom: 25px;
+    }
+    .p_l_10{
+		padding-left: 10px;
+		padding-top: 0;
+	}
+    .bg_image{
+		background: url(../assets/imgs/orderno-img.png) no-repeat;
+		background-size: contain;
+		background-position: top left;
+    }
+    .my-label{
+		text-transform: uppercase;
+		font-size: 10px !important;
+		color: #A1B0C1;
+		font-weight: 600;
+    }
+   
+    .label_white{
+		color: #fff !important;
+    }
+    .my-s-label{
+		margin-bottom: 2px;
+		width: 100%;
+		color: #187d90;
+		font-size: 16px;
+		font-weight: 500;
+		margin-top: 5px;
+		padding-bottom: 5px;
+    }
+    .lbl_price_size{
+		font-size: 25px;
+    	padding-right: 10px;
+    }
+    // .lbl_price_size:first-letter{
+		// font-size: 15px;
+  // }
+  span {
+    font-weight: 600;
+    &.cross {
+        text-align: center;
+        width: 32px;
+    }
+    &.service {
+        color: $text-muted;
+        font-weight: 400;
+        font-size: 1.2rem;
+        width: 76px;
+        margin-left: auto;
+        margin-right: 16px;
+    }
+    &.amount {
+        text-align: right;
+        width: 30px;
+        margin-right: 0;
+    }
+   
+}
+.units-cart{
+  padding: 15px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.title-center-ios{
+  left: 0;
+    top: 0;
+    padding: 0 90px 1px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    pointer-events: none;
+}
+}

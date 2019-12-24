@@ -1,0 +1,149 @@
+page-orderconfirmed {
+    .title-center{
+        text-align: center !important;
+        margin-right: 44px;
+    }
+    .all-orders {
+        background-color: $white;
+        padding: 1px 16px 16px;
+        margin-bottom: 156px;
+        overflow: overlay;
+        .order-header {
+            display: flex;
+            align-items: center;
+            color: $text-muted;
+            font-weight: 400;
+            font-size: 1.5rem;
+            span {
+                color: $text-theme;
+                margin-left: auto;
+                font-weight: 600;
+            }
+        }
+        .label {
+            align-items: center;
+            color: $text-dark;
+            font-size: 1.4rem;
+            display: flex;
+            margin-right: 0;
+            padding-bottom: 2px;
+            span {
+                font-weight: 600;
+                // &.items {}
+                &.cross {
+                    text-align: center;
+                    width: 32px;
+                }
+                &.service {
+                    color: $text-muted;
+                    font-weight: 400;
+                    font-size: 1.2rem;
+                    width: 76px;
+                    margin-left: auto;
+                    margin-right: 20px;
+                }
+                &.amount {
+                    text-align: right;
+                    width: 30px;
+                    margin-right: 0;
+                }
+            }
+        }
+        .add-more {
+            color: $text-theme;
+            font-weight: 600;
+        }
+    }
+    .fixed-bottom {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        right: 0;
+        .promo-code {
+            padding: 14px 16px;
+            background-color: $white;
+            color: $text-theme;
+            margin: 0;
+            font-weight: 500;
+            margin-bottom: 5px;
+            font-size: 1.6rem;
+            display: flex;
+            ion-icon {
+                margin-right: 16px;
+                font-size: 2rem;
+            }
+        }
+        .price-section {
+            background-color: $white;
+            padding: 10px 16px 1px;
+            .label {
+                margin-right: 16px;
+                display: flex;
+                color: $text-muted;
+                font-weight: 500;
+                margin-top: 10px;
+                margin-bottom: 8px;
+                font-size: 1.5rem;
+                span {
+                    margin-left: auto;
+                    color: $text-dark;
+                    font-weight: 600;
+                }
+                &.total-amount {
+                    color: $text-theme;
+                    font-weight: 600;
+                    margin-bottom: 15px;
+                    span {
+                        color: $text-theme;
+                        font-size: 1.6rem;
+
+                    }
+                }
+            }
+        }
+        .btn {
+            height: 50px;
+            line-height: 50px;
+            margin: 0;
+            background-color: $bg-theme;
+            color: $white;
+            font-weight: 500;
+            font-size: 1.6rem;
+            ion-icon {
+                margin-left: 15px;
+            }
+        }
+    }
+    .mg-right{
+        margin-right: 10px;
+    }
+    .col-item-center{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      input[type=text], select {
+        font-size: 14px;
+        width: 90%;
+        padding: 12px 20px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin: 2%;
+        }
+        .ion-item-tag {
+            border-radius: 0px 20px 20px 0px !important;
+            font-size: 14px;
+            border: 1px solid #187d90;
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+            height: 40px;
+            margin-bottom: 5px;
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+}

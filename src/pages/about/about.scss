@@ -1,0 +1,40 @@
+page-about {
+    .title-center{
+        text-align: center !important;
+        margin-right: 44px;
+    }
+    .logo {
+        width: 260px;
+        margin: auto;
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+    p {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: $text-dark;
+        line-height: 1.5;
+    }
+    .services {
+        border-top: 5px solid $bg-light;
+        p {
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+    }
+    .col {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: $text-dark;
+        line-height: 1.5;
+        text-align: center;
+        padding: 0;
+        img {
+            display: block;
+            margin-bottom: 0px;
+            max-width: 100px;
+            width: 100%;
+        }
+    }
+}

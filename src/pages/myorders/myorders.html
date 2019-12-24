@@ -1,0 +1,131 @@
+<ion-header>
+    <ion-navbar>
+        <div style="text-align: center;margin-right: 40px;padding-top: 10px;"
+            *ngFor="let item of bookingDetails let i=index ">
+            <ion-title>Order No. {{order_id}}<br><span>{{item.start_date}}</span></ion-title>
+        </div>
+    </ion-navbar>
+    <ion-list class="details" no-lines>
+        <ion-row *ngFor="let item of bookingDetails let i=index">
+            <ion-item item-start>
+                <h2>
+                    Ordered by<strong>{{item.client_name}}</strong>
+                </h2>
+                <!-- <ion-avatar item-end>
+                            <ion-icon name="md-call"></ion-icon>
+                        </ion-avatar> -->
+            </ion-item>
+        </ion-row>
+        <ion-row *ngFor="let item of bookingDetails let i=index">
+            <ion-item item-start class="status">
+                <h2 *ngIf="item.booking_status=='A'">
+                    Ordered status<strong>Ready to Deliver</strong>
+                </h2>
+                <ion-avatar *ngIf="item.booking_status=='A'" item-end>
+                    <img src="assets/imgs/pickedup.png">
+                </ion-avatar>
+                <h2 *ngIf="item.booking_status=='CO'">
+                    Ordered status<strong>Item Delivered</strong>
+                </h2>
+                <ion-avatar *ngIf="item.booking_status=='CO'" item-end>
+                    <img src="assets/imgs/delivered.png">
+                </ion-avatar>
+            </ion-item>
+        </ion-row>
+
+    </ion-list>
+    <ion-segment [(ngModel)]="order">
+        <ion-segment-button value="order_info">
+            Order Info
+        </ion-segment-button>
+        <ion-segment-button value="cloth_list">
+            Cloth List
+        </ion-segment-button>
+    </ion-segment>
+</ion-header>
+
+<ion-content class="bg-light">
+    <div [ngSwitch]="order" class="order-list">
+        <div *ngSwitchCase="'order_info'" no-lines class="order_info">
+            <div class="info">
+                <ion-row *ngFor="let item of bookingDetails let i=index">
+                    <ion-col col-6>
+                        <p><small>Picked up</small></p>
+                        <h2><strong>{{item.booking_date_time | date :  "dd MMM yyyy'"}} </strong>
+                            <span>{{item.booking_date_time | date :  "hh:mm a"}}</span></h2>
+                    </ion-col>
+                    <ion-col col-6>
+                        <p><small>Delivery</small></p>
+                        <h2><strong>{{item.delivery | date :  "dd MMM yyyy'"}} </strong>
+                            <span>{{item.delivery | date :  "hh:mm a"}}</span></h2>
+                    </ion-col>
+                </ion-row>
+            </div>
+
+            <div class="address info">
+                <ion-row *ngFor="let item of bookingDetails let i=index">
+                    <p><small>Pick up Address</small></p>
+                    <ion-col col-10 style="align-items: center;display: flex;">
+                        <h2><strong>{{item.client_address}}</strong></h2>
+                    </ion-col>
+
+                    <ion-col col-2>
+                        <ion-icon name="ios-home-outline"></ion-icon>
+                    </ion-col>
+                </ion-row>
+                <ion-row *ngFor="let item of bookingDetails let i=index">
+
+                    <p><small>phone Num :</small></p>
+                    <ion-col col-10 style="align-items: center;display: flex;">
+                        <h2><strong>{{item.client_phone}}</strong></h2>
+                    </ion-col>
+                    <ion-col col-2>
+                        <ion-avatar item-end>
+                            <ion-icon name="md-call"></ion-icon>
+                        </ion-avatar>
+
+                    </ion-col>
+
+                </ion-row>
+                <!-- <div class="map">
+                        <img src="assets/imgs/map-img.png">
+                    </div> -->
+            </div>
+            <div class="info payment">
+                <p><small>Payment</small></p>
+                <ion-row *ngFor="let item of bookingDetails let i=index">
+                    <ion-col col-12>
+                        <h2><strong>{{currSymbol}} {{item.booking_price}}</strong>
+                            <span>{{item.payment_type}}</span>
+                        </h2>
+                    </ion-col>
+                </ion-row>
+                <!-- <button ion-button block margin-top class="btn">Deliverd</button> -->
+            </div>
+        </div>
+        <div *ngSwitchCase="'cloth_list'" no-lines class="cloth_list">
+            <div class="receipt">
+                <div padding-top class="units-cart">
+                    <ion-row *ngFor="let unit of unitList">
+                        <li class="txt-light-muted">
+                            {{unit}}
+                        </li>
+                    </ion-row>
+                </div>
+                <div class="total" padding-top *ngFor="let item of bookingDetails let i=index">
+                    <ion-row class="grend_total">
+                        <ion-col col-6>
+                            <h2><strong>Total Ammount</strong></h2>
+                        </ion-col>
+                        <ion-col col-6>
+                            <p><strong>{{currSymbol}}{{item.booking_price}}</strong></p>
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </div>
+            <!-- <div class="fixed-bottom">
+                    <button ion-button block>Delivered</button>
+                </div> -->
+        </div>
+    </div>
+</ion-content>

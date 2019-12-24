@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title class="title-center">Select Address</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-light" no-bounce>
+    <p padding-left padding-right class="heading">Select Pick up & Delivery Address</p>
+    <ion-toolbar no-border-top class="select-tab">
+        <ion-segment [(ngModel)]="address">
+            <ion-segment-button value="home">
+                <span class="home-img"></span> Home
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+
+    <div [ngSwitch]="address" class="address-list">
+        <ion-list *ngSwitchCase="'home'" no-lines class="home-address">
+            <div class="input-address" padding>
+                <p class="heading" no-margin padding-bottom>Enter Address Details</p>
+                <ion-list no-line>
+                    <ion-item>
+                        <ion-input type="text" [ngModel]="pltNum" placeholder="Building/Society Name & Number">
+                        </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-input type="text" [ngModel]="userInfo.address"
+                            placeholder="Street Address, Landmark, etc."></ion-input>
+                    </ion-item>
+                    <ion-row no-padding>
+                        <ion-col no-padding>
+                            <ion-item>
+                                <ion-input type="text" [ngModel]="userInfo.zip" placeholder="Zip Code"></ion-input>
+                            </ion-item>
+                        </ion-col>
+                        <ion-col no-padding>
+                            <ion-item>
+                                <ion-input type="text" [ngModel]="userInfo.city" placeholder="City"></ion-input>
+                            </ion-item>
+                        </ion-col>
+                    </ion-row>
+                    <ion-item>
+                        <ion-input type="text" [ngModel]="userInfo.phone" placeholder="Enter phone number"></ion-input>
+                    </ion-item>
+                </ion-list>
+            </div>
+        </ion-list>
+    </div>
+
+    <div class="fixed-bootom" (click)="selectdate()">
+        <ion-row>
+            <ion-col class="cost" col-8>Amount Payable $75.00</ion-col>
+            <ion-col class="next">Next
+                <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+            </ion-col>
+        </ion-row>
+    </div>
+</ion-content>

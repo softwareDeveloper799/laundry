@@ -1,0 +1,78 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title *ngIf="listClothEnable" class="title-center">Select Clothes</ion-title>
+        <ion-title *ngIf="!listClothEnable" class="title-center">Select Zip Code</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="bg-light" no-bounce>
+    <div style="margin-top: 8px;" class="cloth-list" *ngIf="listClothEnable">
+        <ion-list no-lines>
+            <ion-item *ngFor="let unit of allUnitsBack ">
+                <ion-row>
+                    <ion-col col-3 class="center-left">
+                        <img *ngIf="unit.image=='' && unit.predefine_image==''"
+                            src="../assets/imgs/default_service.png"
+                            width="80" height="70">
+                        <img *ngIf="unit.image==''"
+                        
+                            src="http://skymoonlabs.com/laundry/assets/images/article-icons/{{unit.predefine_image}}"
+                            width="80" height="70">
+                        <img *ngIf="unit.predefine_image!='' && unit.image!=''"
+                            src="http://skymoonlabs.com/laundry/assets/images/article-icons/{{unit.image}}"
+                            width="80" height="70">
+                    </ion-col>
+                    <ion-col col-4 class="center-left">
+                        <ion-note>{{unit.units_title}}</ion-note>
+                    </ion-col>
+                    <ion-col col-2 class="center-left">
+                        <ion-note class="price">{{currSymbol}}{{unit.base_price}}</ion-note>
+                    </ion-col>
+                    <ion-col col-3 class="center-left align-right">
+                        <ion-note end>
+                            <ion-icon name="remove-circle" (click)="remove(unit.id,unit.minlimit)"></ion-icon>
+                            <span>{{unit.minlimit}}</span>
+                            <ion-icon name="add-circle" (click)="add(unit.id,unit.minlimit,unit.maxlimit)"></ion-icon>
+                        </ion-note>
+                    </ion-col>
+                </ion-row>
+            </ion-item>
+        </ion-list>
+    </div>
+    <div *ngIf="!listClothEnable" class="bg">
+        <ion-row class="booking_title_bg">
+            <h3 class="bookin_title">Where would you like us to provide service?</h3>
+        </ion-row>
+        <!-- First slide for postal code -->
+        <div class="main_view_bg">
+            <div style="text-align: center">
+                <img class="booking_img" src="../assets/imgs/laundry_bg.png">
+            </div>
+            <ion-card class="zip-card">
+                <ion-item no-lines class="zip-card">
+                    <ion-label stacked color='primary' class="login_icon">
+                        <ion-icon name="apps"></ion-icon>
+                    </ion-label>
+                    <ion-input type="text" [(ngModel)]="zipCode" placeholder="Zip or Postal Code" name="postal_code"
+                        class="login_text">
+                    </ion-input>
+                </ion-item>
+                <ion-item class="zip-card">
+                    <button type="submit" ion-button color="primary" class="btnsubmit"
+                        (click)="fnCheckPostalCode()">Verify ZIP Code</button>
+                </ion-item>
+            </ion-card>
+        </div>
+    </div>
+
+</ion-content>
+<ion-footer *ngIf="listClothEnable">
+    <div class="fixed-bootom" (click)="orderconfirmed()">
+        <ion-row>
+            <ion-col class="cost">Total {{currSymbol}}{{totalAmt}} </ion-col>
+            <ion-col class="small">{{selectedItem}} Items added</ion-col>
+            <ion-col class="next">Next
+                <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+            </ion-col>
+        </ion-row>
+    </div>
+</ion-footer> 

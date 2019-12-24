@@ -1,0 +1,136 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="openSetting()">
+                <ion-icon name="settings"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title text-center style="margin-left: 40px;"><strong>Pickup</strong>/Deliveries
+        </ion-title>
+    </ion-navbar>
+    <ion-segment [(ngModel)]="status">
+        <ion-segment-button value="assigned">
+            Assigned
+        </ion-segment-button>
+        <ion-segment-button value="completed">
+            Completed
+        </ion-segment-button>
+    </ion-segment>
+</ion-header>
+
+<ion-content class="bg-light">
+    <div [ngSwitch]="status" class="order-list">
+        <ion-list *ngSwitchCase="'assigned'" no-lines class="assigned" padding-top>
+            <div *ngIf="activeBookingAvailable==0" text-center>
+                Data not available!
+            </div>
+            <ion-row *ngFor="let item of activeBooking">
+                <ion-item>
+                    <ion-avatar item-start>
+                        <img src="assets/imgs/dispatched.png">
+                    </ion-avatar>
+                    <div class="contant">
+                        <h2 class="d-flex">
+                            <span class="text">
+                                {{item.title}}
+                                <small>
+                                    Order No: {{item.order_id}}
+                                </small>
+                            </span>
+                            <span class="end">
+                                <button ion-button blok full padding-top padding-bottom
+                                    (click)="orderinfo(item.order_id)">View</button>
+                            </span>
+                        </h2>
+                        <h3 class="d-flex">
+                            <span class="text">
+                                <small>
+                                    Appointment time
+                                </small>
+                                <strong>
+                                    {{item.appointment_time}}
+                                    <span>{{item.appointment_date}}</span>
+                                </strong>
+                            </span>
+                            <span class="end text">
+                                <small>
+                                    Payment
+                                </small>
+                                <strong>
+                                    {{currSymbol}} {{item.total_payment}}
+                                    <span>{{item.payment_method}}</span>
+                                </strong>
+                            </span>
+                        </h3>
+                        <h3 class="d-flex">
+                            <span class="text">
+                                <small>
+                                    Delivery Address
+                                </small>
+                                <strong>
+                                    {{item.client_info_data.address}},{{item.client_info_data.zip}},{{item.client_info_data.city}}
+                                </strong>
+                            </span>
+                        </h3>
+                    </div>
+                </ion-item>
+            </ion-row>
+        </ion-list>
+        <ion-list *ngSwitchCase="'completed'" no-lines class="completed" padding-top>
+            <div *ngIf="completeBookingAvailable==0" text-center>
+                Data not available!
+            </div>
+            <ion-row *ngFor="let item of completeBooking">
+                <ion-item>
+                    <ion-avatar item-start>
+                        <img src="assets/imgs/dispatched.png">
+                    </ion-avatar>
+                    <div class="contant">
+                        <h2 class="d-flex">
+                            <span class="text">
+                                {{item.title}}
+                                <small>
+                                    Order No: {{item.order_id}}
+                                </small>
+                            </span>
+                            <span class="end">
+                                <button ion-button blok full padding-top padding-bottom
+                                    (click)="orderinfo(item.order_id)">View</button>
+                            </span>
+                        </h2>
+                        <h3 class="d-flex">
+                            <span class="text">
+                                <small>
+                                    Appointment time
+                                </small>
+                                <strong>
+                                    {{item.appointment_time}}
+                                    <span>{{item.appointment_date}}</span>
+                                </strong>
+                            </span>
+                            <span class="end text">
+                                <small>
+                                    Payment
+                                </small>
+                                <strong>
+                                    {{currSymbol}} {{item.total_payment}}
+                                    <span>{{item.payment_method}}</span>
+                                </strong>
+                            </span>
+                        </h3>
+                        <h3 class="d-flex">
+                            <span class="text">
+                                <small>
+                                    Delivery Address
+                                </small>
+                                <strong>
+                                    {{item.client_info_data.address}},{{item.client_info_data.zip}},{{item.client_info_data.city}}
+                                </strong>
+                            </span>
+                        </h3>
+                    </div>
+                </ion-item>
+            </ion-row>
+        </ion-list>
+    </div>
+</ion-content>

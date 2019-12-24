@@ -1,0 +1,182 @@
+page-selectaddress {
+    .heading {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    .select-tab {
+        padding: 0;
+        height: 102px;
+        margin-bottom: 25px;
+        width: 120px;
+        .toolbar-background {
+            background-color: $bg-light;
+        }
+        .segment-wp {
+            ion-segment-button {
+                min-width: 33.33%;
+            }
+        }
+        .segment-button {
+            background-color: $white !important;
+            border: none !important;
+            color: $text-dark !important;
+            opacity: 1;
+            margin-left: 5px;
+            margin-right: 5px;
+            font-weight: 600;
+            position: relative;
+            border-radius: 5px;
+            height: auto;
+            line-height: 3;
+            font-size: 1rem;
+            text-transform: none;
+            min-width: 30.33%;
+            span {
+                display: block;
+                margin: 10px auto 0px;
+                background-position: center !important;
+                background-size: cover !important;
+                background-repeat: no-repeat !important;
+                width: 50px;
+                height: 50px;
+                &.home-img {
+                    background-image: url(../assets/imgs/home.png);
+                }
+                &.office-img {
+                    background-image: url(../assets/imgs/office.png);
+                }
+                &.other-img {
+                    background-image: url(../assets/imgs/location.png);
+                }
+            }
+            &.segment-activated {
+                background-color: $text-theme !important;
+                color: $white !important;
+                span {
+                    &.home-img {
+                        background-image: url(../assets/imgs/home_active.png);
+                    }
+                    &.office-img {
+                        background-image: url(../assets/imgs/office_active.png);
+                    }
+                    &.other-img {
+                        background-image: url(../assets/imgs/location_active.png);
+                    }
+                }
+            }
+        }
+    }
+
+    .input-address {
+        margin-bottom: 60px;
+        .list {
+            margin-top: 10px;
+            margin-bottom: 0;
+            .row {
+                ion-col:first-child {
+                    margin-right: 10px !important;
+                }
+                ion-col:nth-child(2) {
+                    margin-left: 10px !important;
+                }
+            }
+        }
+        background-color: $white;
+        .item {
+            padding: 0;
+            box-shadow: none !important;
+            border: none !important;
+            margin-bottom: 30px;
+            .item-inner {
+                padding: 0;
+                border-bottom: 1px solid $text-light !important;
+                box-shadow: none !important;
+                .input-wrapper {
+                    box-shadow: none !important;
+                    border: none !important;
+                }
+                .text-input {
+                    margin-left: 0;
+                    margin-right: 0;
+                    border: none;
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                    box-shadow: none !important;
+
+                }
+            }
+            &.check-item {
+                margin-bottom: 10px;
+                ion-checkbox {
+                    margin: 6px 8px 6px 0px !important;
+                }
+                .item-inner {
+                    border-bottom: none !important;
+                    font-size: 1.3rem;
+                    color: $text-muted;
+                }
+            }
+        }
+
+    }
+    .fixed-bootom {
+        position: fixed;
+        bottom: 0;
+        background-color: $bg-theme;
+        color: $white;
+        width: 100%;
+        padding: 1.15rem 1rem;
+        height: 50px;
+        .row {
+            display: flex;
+            align-items: center;
+            .cost {
+                font-weight: 500;
+                font-size: 1.5rem;
+            }
+            .next {
+                font-weight: 500;
+                font-size: 1.6rem;
+                text-align: right;
+                ion-icon {
+                    margin-left: 1rem;
+                    margin-right: .5rem;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+    .address-list {
+        position: relative;
+        .office-address::after,
+        .home-address::after,
+        .other-address::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: $white;
+            top: -8px;
+            transform: rotate(45deg);
+            margin: auto;
+        }
+        .office-address::after {
+            left: 0;
+            right: 0;
+        }
+        .home-address::after {
+            left: 12%;
+            right: auto;
+        }
+        .other-address::after {
+            left: auto;
+            right: 12%;
+        }
+    }
+    .title-center{
+        text-align: center !important;
+        margin-right: 44px;
+    }
+
+}

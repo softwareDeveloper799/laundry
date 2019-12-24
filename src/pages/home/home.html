@@ -1,0 +1,80 @@
+<ion-header>
+    <ion-navbar> 
+        <ion-title text-center><strong>Laundry</strong>Booking</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-light" no-bounce overflow-scroll="true">
+    <ion-slides pager>
+        <ion-slide *ngFor="let slide of slides; let i=index">
+            <img [src]="slide.image" class="slide-image" />
+            <div class="banner-text">
+                <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+                <button *ngIf="i==0" (click)="fnGotoAllOrder()" ion-button outline item-end icon-end clear small>
+                    View booking
+                    <ion-icon name="md-arrow-forward"></ion-icon>
+                </button>
+            </div>
+        </ion-slide>
+    </ion-slides>
+
+    <p padding-left padding-right class="heading">Services</p>
+    <ion-scroll scrollX style="height:165px;white-space: nowrap;">
+        <div class="scroll-item" *ngFor="let service of allServices" (click)="selectclothes(service.id,service.title)">
+            <div class="item-box">
+                <img *ngIf="service.image" [src]="service.image" width="120" height="100">
+                <img *ngIf="!service.image" width="120" height="100" src="assets/imgs/default_service.png">
+                <h5 class="top-zero" [innerHTML]="service.title"></h5>
+                <p [innerHTML]="service.description"></p>
+            </div>
+        </div>
+    </ion-scroll>
+
+    <p padding-left padding-right class="heading">Your Active Order ({{totalActiveOrder}})<span
+            *ngIf="totalActiveOrder!='0'" (click)="fnGotoAllOrder()">All Orders</span></p>
+    <div padding-left padding-right class="order-list">
+        <ion-list no-lines>
+            <div *ngFor="let item of allActive;" class="padding-top">
+                <div *ngIf="item.booking_status=='A'">
+                    <div class="order-header">
+                        <ion-row>
+                            <ion-col col-4>
+                                <small>Order No: {{item.order_id}}</small>
+                            </ion-col>
+                            <ion-col col-6 text-right>
+                                <small>{{item.appointment_date}}</small>
+                            </ion-col>
+                            <ion-col col-2 text-right>
+                                <ion-icon (click)="doCancel(item.order_id)"
+                                    style="font-size: 20px;color: #187d90;margin-right: 5px;" name="close"></ion-icon>
+                            </ion-col>
+                        </ion-row>
+                    </div>
+                    <ion-item (click)="fnGetDetails(item.order_id)">
+                        <div>
+                            <ion-row style="align-items: center">
+                                <ion-col col-3>
+                                    <ion-avatar item-start>
+                                        <img src="assets/imgs/confirmed.png">
+                                    </ion-avatar>
+                                </ion-col>
+                                <ion-col col-9>
+                                    <h3>{{item.title}}</h3>
+                                    <p class="color-warning">Pending</p>
+                                    <ion-row>
+                                        <ion-col col-5>
+                                            <h3 text-left>{{item.appointment_time}}</h3>
+                                        </ion-col>
+                                        <ion-col col-7>
+                                            <h2 text-right>{{currSymbol}}{{item.total_payment}}</h2>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-col>
+                            </ion-row>
+                        </div>
+                    </ion-item>
+                </div>
+            </div>
+        </ion-list>
+    </div>
+</ion-content>

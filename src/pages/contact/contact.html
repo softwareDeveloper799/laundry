@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title class="title-center">
+            Contact
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="bg-light" no-bounce>
+    <ion-list no-lines>
+        <ion-item *ngFor="let item of contactList">
+            <p>Call us</p>
+            <h2 *ngIf="item.comapny_phone!=''">{{item.comapny_phone}}</h2>
+            <h2 class="long-press-select" *ngIf="item.comapny_phone==''">+0000000000</h2>
+            <ion-avatar item-end>
+                <ion-icon name="md-call"></ion-icon> 
+            </ion-avatar>
+        </ion-item>
+        <ion-item *ngFor="let item of contactList">
+            <p>Email us</p>
+            <h2 class="long-press-select">{{item.comapny_email}}</h2>
+            <ion-avatar item-end>
+                <ion-icon name="md-mail"></ion-icon>
+            </ion-avatar>
+        </ion-item>
+        <ion-item *ngFor="let item of contactList">
+            <p>Reach us</p>
+            <h2 class="long-press-select">{{item.comapny_add}}</h2>
+            <ion-avatar item-end>
+                <ion-icon name="pin"></ion-icon>
+            </ion-avatar>
+        </ion-item>
+    </ion-list>
+    <!-- <div class="map">
+        <ion-icon name="md-navigate"></ion-icon>
+        <img src="assets/imgs/map-img.png">
+    </div> -->
+</ion-content>

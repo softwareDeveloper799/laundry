@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Rate Order</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content> 
+    <div class="status" padding text-center>
+        <img src="assets/imgs/delivered.png">
+        <p>Hey Sam,<br>Your order has been<br> Delivered Successfully</p>
+    </div>
+    <div class="rate" padding text-center>
+        <p>Rate your last order experiece</p>
+        <div class="stars">
+            <ion-icon name="md-star"></ion-icon>
+            <ion-icon name="md-star"></ion-icon>
+            <ion-icon name="md-star"></ion-icon>
+            <ion-icon name="md-star-half"></ion-icon>
+            <ion-icon name="md-star-outline"></ion-icon>
+        </div>
+        <ion-input type="text" placeholder="Share your experiece in words"></ion-input>
+        <button ion-button full style="height: 50px" (click)="tabs()">Submit Review</button>
+    </div>
+</ion-content>

@@ -1,0 +1,15 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title class="title-center">Enter OTP</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <p text-center>Let us know One time password (OTP)<br>we'll send you OTP on your registered<br>email address</p>
+    <ion-list no-lines class="form">
+        <ion-item>
+            <ion-input [(ngModel)]="verifyOtp" type="number" placeholder="Enter One Time Password" text-center>
+            </ion-input>
+        </ion-item>
+    </ion-list>
+    <button ion-button block (click)="verificationOtp()">Submit</button>
+</ion-content>

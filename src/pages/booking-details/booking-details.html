@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar> 
+    
+    <ion-title text-center class="title-center-ios">Booking Details</ion-title>
+    <ion-icon class="close-icon" name="close" (click)="fnCloseModel()"></ion-icon>
+   
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-light" no-bounce> 
+  <div *ngFor="let item of bookingInfo let i=index ">
+    <ion-card class="card_border_radius p_b_25">
+
+      <ion-row padding class="bg_image">
+
+        <ion-col col-6 class="p_l_10">
+          <div>
+            <ion-label stacked class="my-label label_white">Order Id</ion-label>
+            <ion-label class="my-s-label label_white">#{{item.id}}</ion-label>
+          </div>
+        </ion-col>
+
+        <ion-col col-6 text-right>
+          <div>
+            <ion-label stacked class="my-label">Price</ion-label>
+            <ion-label class="my-s-label lbl_price_size">{{currSymbol}}{{item.booking_price}}</ion-label>
+          </div>
+        </ion-col>
+
+      </ion-row>
+
+      <ion-item>
+        <ion-label stacked class="my-label">Service Name</ion-label>
+        <ion-label class="my-s-label">{{item.service_title}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked class="my-label">Unit</ion-label>
+      </ion-item>
+      <div class="bg-light units-cart">
+        <li class="my-s-label" *ngFor="let unit of unitList">
+          {{unit}}
+        </li>
+      </div>
+      <ion-item>
+        <ion-label stacked class="my-label">Payment Type</ion-label>
+        <ion-label class="my-s-label">{{item.payment_type}}</ion-label>
+      </ion-item>
+      <ion-item class="row_color">
+        <ion-label stacked class="my-label">Booking Status</ion-label>
+        <ion-label class="my-s-label" *ngIf="item.booking_status == 'A'">Pending</ion-label>
+        <ion-label class="my-s-label" *ngIf="item.booking_status == 'MN'">Appointment Marked as No Shown</ion-label>
+        <ion-label class="my-s-label" *ngIf="item.booking_status == 'C'">Confirmed</ion-label>
+        <ion-label class="my-s-label" *ngIf="item.booking_status == 'R'">Rejected</ion-label>
+        <ion-label class="my-s-label" *ngIf="item.booking_status == 'RS'">Rescheduled</ion-label>
+        <ion-label class="my-s-label" *ngIf="item.booking_status == 'CC'">Cancelled by customer</ion-label>
+        <ion-label class="my-s-label" *ngIf="item.booking_status == 'CS'">Cancelled by Service Provider</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked class="my-label">Start Date</ion-label>
+        <ion-label class="my-s-label">{{item.start_date}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked class="my-label">Start Time</ion-label>
+        <ion-label class="my-s-label">{{item.start_time}}</ion-label>
+      </ion-item>
+    </ion-card>
+  </div>
+</ion-content>
